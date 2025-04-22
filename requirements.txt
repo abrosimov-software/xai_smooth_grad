@@ -1,0 +1,10 @@
+datasets
+tqdm
+ipython
+ipykernel
+jupyter
+ipywidgets
+scikit-learn
+matplotlib
+polars
+numpy
