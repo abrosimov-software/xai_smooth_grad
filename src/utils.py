@@ -108,7 +108,8 @@ def compare_saliency_methods(
         imgs_dataset: torch.utils.data.Dataset,
         base_methods: List[BaseGrad],
         smooth_methods: List[SmoothGrad],
-        figsize: Tuple[int, int] = (15, 10)
+        figsize: Tuple[int, int] = (15, 10),
+        result_path: Optional[str] = None
 ) -> None:
     """
     Compare saliency methods.
@@ -165,4 +166,6 @@ def compare_saliency_methods(
                 axs[j+len(base_methods)+1, i].set_title(f"Smooth {method.base_grad_class.__class__.__name__}", fontsize=12)
     
     plt.tight_layout()
+    if result_path:
+        plt.savefig(result_path)
     plt.show()
